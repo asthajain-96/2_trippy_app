@@ -126,6 +126,7 @@ class	App:
         elif self.all_filters['blue'] == True:
             frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
+        # If there's a frame, create an image to display on the canvas
         if	ret:
             self.frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
             self.photo=PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(self.frame))
@@ -171,8 +172,8 @@ class	MyVideoCapture:
         self.height	= self.vid.get(cv2.CAP_PROP_FRAME_HEIGHT)
         global_frame1 = None
         self.frame1 = global_frame1
+
     def	get_frame(self):
-        print('get frame is working')
         if	self.vid.isOpened():
             ret, frame = self.vid.read()
             if self.frame1 is None:

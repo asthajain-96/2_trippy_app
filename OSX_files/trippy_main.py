@@ -96,7 +96,7 @@ class	App:
         cv2.imwrite(path+r"frame-"+time.strftime("%d-%m-%Y-%H-%M-%S")+'.jpg', self.frame)
 
     def	update(self):
-        print('update is working')
+        # print('update is working')
         ret,frame, frame1=self.vid.get_frame()
         gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
 

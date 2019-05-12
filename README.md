@@ -8,10 +8,12 @@ Function:
  
 How to use:
  -If you run python on your machine, you can just copy the file trippy.py and run it locally. 
+ 
  -If you don't have python, or don't want to go through the trouble installing OpenCV, Pillow and Tkinter, you can just   navigate to the respective operating system folder and find the .exe or .app files and run it. 
 
 Folders:
  -OSX Files: contains mac files for the trippy app. 
+ 
  -Windows files: contains windows python code for the trippy app.  
  
  Hope you enjoy!

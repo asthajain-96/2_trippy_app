@@ -100,30 +100,30 @@ class	App:
         ret,frame, frame1=self.vid.get_frame()
         gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
 
-        if self.all_filters['color'] == True:
+        if self.all_filters['color']:
             pass
-        elif self.all_filters['gray'] == True:
+        elif self.all_filters['gray']:
             frame = gray
-        elif self.all_filters['gauss'] == True:
+        elif self.all_filters['gauss']:
             frame = cv2.GaussianBlur(gray, (21,21), 0)
-        elif self.all_filters['delta'] == True:
+        elif self.all_filters['delta']:
             frame = cv2.absdiff(frame1, gray)
             # self.frame_delta = frame
-        elif self.all_filters['sobel'] == True:
+        elif self.all_filters['sobel']:
             frame = cv2.Sobel(gray,-1,  dx=1, dy=0, ksize=11, scale=1, delta=0, borderType=cv2.BORDER_DEFAULT)
-        elif self.all_filters['sobelxy'] == True:
+        elif self.all_filters['sobelxy']:
             sobelx = cv2.Sobel(gray,-1,  dx=1, dy=0, ksize=11, scale=1, delta=0, borderType=cv2.BORDER_DEFAULT)
             sobely = cv2.Sobel(gray,-1,  dy=1, dx=0, ksize=11, scale=1, delta=0, borderType=cv2.BORDER_DEFAULT)
             frame = sobelx+sobely
-        elif self.all_filters['laplace'] == True:
+        elif self.all_filters['laplace']:
             frame = cv2.Laplacian(gray, -1, ksize=17, scale=1, delta=0, borderType=cv2.BORDER_DEFAULT)
-        elif self.all_filters['threshold'] == True:
+        elif self.all_filters['threshold']:
             frame = cv2.threshold(cv2.absdiff(frame1, gray), 30, 255, cv2.THRESH_BINARY)[1]
-        elif self.all_filters['delta_plus'] == True:
+        elif self.all_filters['delta_plus']:
             if self.frame_delta_plus is None:
                 self.frame_delta_plus = cv2.absdiff(frame1, gray)
             frame = cv2.absdiff(self.frame_delta_plus, gray)
-        elif self.all_filters['blue'] == True:
+        elif self.all_filters['blue']:
             frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
         # If there's a frame, create an image to display on the canvas

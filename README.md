@@ -1,6 +1,6 @@
 # 2_trippy_app
 Trippy a python open-cv based photo filter app.
-See this story in https://medium.com/@fidel.esquivelestay/develop-a-photo-filter-app-using-python-open-cv-and-tkinter-8ef4f2703282
+See this story in https://medium.com/@fidel.esquivelestay/make-you-photos-look-trippy-with-python-how-to-build-your-own-photo-filter-app-from-scratch-8ef4f2703282
 
 See folders Win and Mac for windows and OSX based versions of this app.
 
